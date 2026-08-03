@@ -1,18 +1,24 @@
-# Ensoniq ESQ-1 — Opus 48k Previews
+# Audio Data Collection
 
-Ensoniq ESQ-1 (1986) — 8-voice synthesizer with 3 digital oscillators per voice and analog filter. Sourced from publicsamples (CC0).
+Audio files in Opus 48k format with metadata index.
 
-## Source
-- Original: https://github.com/publicsamples/Ensoniq-ESQ1
-- License: CC0-1.0 (public domain)
-- Author: publicsamples
+## Contents
 
-## Files
-- 2164 Opus 48k VBR audio files (flat structure)
-- `index.json`
+- `index.json` — metadata index
+- `*.opus` — audio files
+- `validate.py` — validation script
 
-## URL Pattern
-- Audio: `https://raw.githubusercontent.com/zulfikarbarbora-outl/ensoniq-esq1-opus-48/main/<filename>.opus`
+## Usage
 
-## Sourced by
-`scripts/source-publicsamples-tier1.py` (Phase 1, resumed) on 2026-07-28
+```python
+import json
+
+with open('index.json') as f:
+    index = json.load(f)
+
+print(f"Files: {index['fileCount']}")
+```
+
+## License
+
+CC0-1.0 / Public Domain
